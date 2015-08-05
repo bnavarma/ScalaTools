@@ -245,10 +245,15 @@
   <ItemGroup>
     <Compile Include="Commands\OpenReplWindowCommand.cs" />
     <Compile Include="Guids.cs" />
+    <Compile Include="JsonListener.cs" />
     <Compile Include="MyConfiguredProject.cs" />
     <Compile Include="MyUnconfiguredProject.cs" />
     <Compile Include="PkgCmdId.cs" />
     <Compile Include="ProjectProperties.cs" />
+    <Compile Include="Repl\IScalaReplSite.cs" />
+    <Compile Include="Repl\ScalaReplEvaluator.cs" />
+    <Compile Include="Repl\ScalaReplEvaluatorProvider.cs" />
+    <Compile Include="Repl\VsScalaReplSite.cs" />
     <Compile Include="SharedProject\AllFilesProjectElement.cs" />
     <Compile Include="SharedProject\AssemblyReferenceNode.cs" />
     <Compile Include="SharedProject\Attributes.cs" />

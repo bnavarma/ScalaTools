@@ -3,12 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.ScalaTools.Repl;
+using Microsoft.VisualStudioTools;
 
 namespace Microsoft.ScalaTools.Commands
 {
-    class OpenReplWindowCommand 
+    internal sealed class OpenReplWindowCommand :Command
     {
-        IReplCommand temp;
+        public override void DoCommand(object sender, EventArgs args)
+        {
+            ScalaPackage.Instance.OpenReplWindow();
+        }
+
+        public override int CommandId
+        {
+            get
+            {
+                return (int)PkgCmdId.cmdidReplWindow;
+            }
+        }
     }
 }

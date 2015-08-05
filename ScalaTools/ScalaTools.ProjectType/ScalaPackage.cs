@@ -12,6 +12,12 @@ using System;
 using System.ComponentModel;
 using System.Runtime.InteropServices;
 using Microsoft.VisualStudio.Shell;
+using Microsoft.VisualStudioTools;
+using System.Diagnostics;
+using System.Globalization;
+using System.Collections.Generic;
+using Microsoft.ScalaTools.Commands;
+using Microsoft.ScalaTools.Repl;
 
 namespace Microsoft.ScalaTools
 {
@@ -27,7 +33,7 @@ namespace Microsoft.ScalaTools
     [Description("A custom project type based on CPS")]
     [Guid(ScalaPackage.PackageGuid)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
-    public sealed class ScalaPackage : Package
+    public sealed class ScalaPackage : CommonPackage
     {
         /// <summary>
         /// The GUID for this package.
@@ -51,13 +57,41 @@ namespace Microsoft.ScalaTools
         /// </summary>
         internal const string DefaultNamespace = "Microsoft.ScalaTools";
 
+        internal static ScalaPackage Instance;
+        
+        public ScalaPackage()
+        {
+            Debug.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering constructor for: {0}", this.ToString()));
+            Debug.Assert(Instance == null, "ScalaPackage create multiple times");
+            Instance = this;
+        }
+
+        public EnvDTE.DTE DTE { get { return (EnvDTE.DTE)GetService(typeof(EnvDTE.DTE)); } }
+
+        #region Package Members
         /// <summary>
         /// Initialization of the package; this method is called right after the package is sited, so this is the place
         /// where you can put all the initialization code that rely on services provided by VisualStudio.
         /// </summary>
         protected override void Initialize()
         {
+            Debug.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering Initialize() of: {0}", this.ToString()));
             base.Initialize();
+
+            var commands = new List<Command> { new OpenReplWindowCommand() };
+
+            RegisterCommands(commands, Guids.ScalaCmdSet);
         }
+
+        internal IReplWindow2 OpenReplWindow(bool focus = true)
+        {
+            var compModel = ComponentModel;
+            var provider = compModel.GetService<IReplWindowProvider>();
+
+            var window = (IReplWindow2)provider.FindReplWindow(ScalaReplEvaluatorProvider.ScalaReplId);
+
+        }
+
+        #endregion
     }
 }
