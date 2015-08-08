@@ -15,7 +15,8 @@ namespace Microsoft.ScalaTools.Repl
 
         public CommonProjectNode GetStartupProject()
         {
-            return ScalaPackage.GetStartupProject(ScalaPackage.Instance);
+            //return ScalaPackage.GetStartupProject(ScalaPackage.Instance);
+            return null;
         }
 
         public bool TryGetStartupFileAndDirectory(out string fileName, out string directory)

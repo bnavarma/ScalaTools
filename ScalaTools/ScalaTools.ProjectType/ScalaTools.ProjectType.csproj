@@ -96,19 +96,19 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.ProjectSystem.Interop, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.VisualStudio.ProjectSystem.14.0.50721-pre\lib\net451\Microsoft.VisualStudio.ProjectSystem.Interop.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.VisualStudio.ProjectSystem.14.0.50729-pre\lib\net451\Microsoft.VisualStudio.ProjectSystem.Interop.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.ProjectSystem.Utilities.v14.0, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.VisualStudio.ProjectSystem.14.0.50721-pre\lib\net451\Microsoft.VisualStudio.ProjectSystem.Utilities.v14.0.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.VisualStudio.ProjectSystem.14.0.50729-pre\lib\net451\Microsoft.VisualStudio.ProjectSystem.Utilities.v14.0.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.ProjectSystem.V14Only, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.VisualStudio.ProjectSystem.14.0.50721-pre\lib\net451\Microsoft.VisualStudio.ProjectSystem.V14Only.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.VisualStudio.ProjectSystem.14.0.50729-pre\lib\net451\Microsoft.VisualStudio.ProjectSystem.V14Only.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.ProjectSystem.VS.V14Only, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Microsoft.VisualStudio.ProjectSystem.14.0.50721-pre\lib\net451\Microsoft.VisualStudio.ProjectSystem.VS.V14Only.dll</HintPath>
+      <HintPath>..\..\packages\Microsoft.VisualStudio.ProjectSystem.14.0.50729-pre\lib\net451\Microsoft.VisualStudio.ProjectSystem.VS.V14Only.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.Shell.14.0, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
@@ -186,6 +186,10 @@
       <HintPath>..\..\packages\Microsoft.VisualStudio.Validation.14.0.50702\lib\net45\Microsoft.VisualStudio.Validation.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -194,6 +198,26 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Composition.AttributedModel, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.AttributedModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Convention, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Convention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Hosting, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Hosting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.Runtime, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Composition.TypedParts, Version=1.0.27.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Composition.1.0.27\lib\portable-net45+win8+wp8+wpa81\System.Composition.TypedParts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Design" />
@@ -219,6 +243,9 @@
     <ProjectReference Include="..\..\InteractiveWindow\InteractiveWindow.csproj">
       <Project>{9b26375a-7b9f-4284-a68e-341df79e30cd}</Project>
       <Name>InteractiveWindow</Name>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <IncludeOutputGroupsInVSIX>BuiltProjectOutputGroup%3bBuiltProjectOutputGroupDependencies%3bGetCopyToOutputDirectoryItems%3bSatelliteDllsProjectOutputGroup%3bPkgdefProjectOutputGroup%3b</IncludeOutputGroupsInVSIX>
+      <IncludeOutputGroupsInVSIXLocalOnly>DebugSymbolsProjectOutputGroup%3b</IncludeOutputGroupsInVSIXLocalOnly>
     </ProjectReference>
     <ProjectReference Include="..\ScalaTools.ProjectTemplate\ScalaTools.ProjectTemplate.csproj">
       <Project>{0cce759f-e7f2-426a-9c4d-80f9f9cd9028}</Project>
@@ -243,17 +270,61 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CodeWindowManager.cs" />
     <Compile Include="Commands\OpenReplWindowCommand.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="Guids.cs" />
     <Compile Include="JsonListener.cs" />
     <Compile Include="MyConfiguredProject.cs" />
     <Compile Include="MyUnconfiguredProject.cs" />
     <Compile Include="PkgCmdId.cs" />
     <Compile Include="ProjectProperties.cs" />
-    <Compile Include="Repl\IScalaReplSite.cs" />
-    <Compile Include="Repl\ScalaReplEvaluator.cs" />
-    <Compile Include="Repl\ScalaReplEvaluatorProvider.cs" />
-    <Compile Include="Repl\VsScalaReplSite.cs" />
+    <Compile Include="ReplWindow\Commands\CancelExecutionCommand.cs" />
+    <Compile Include="ReplWindow\Commands\ClearScreenReplCommand.cs" />
+    <Compile Include="ReplWindow\Commands\EchoReplCommand.cs" />
+    <Compile Include="ReplWindow\Commands\ResetReplCommand.cs" />
+    <Compile Include="ReplWindow\Commands\WaitReplCommand.cs" />
+    <Compile Include="ReplWindow\CustomTrackingSpan.cs" />
+    <Compile Include="ReplWindow\ExecutionResult.cs" />
+    <Compile Include="ReplWindow\History.cs" />
+    <Compile Include="ReplWindow\IContentTypeMetadata.cs" />
+    <Compile Include="ReplWindow\IMultipleScopeEvaluator.cs" />
+    <Compile Include="ReplWindow\InlineReplAdornment.cs" />
+    <Compile Include="ReplWindow\InlineReplAdornmentManager.cs" />
+    <Compile Include="ReplWindow\IReplCommand.cs" />
+    <Compile Include="ReplWindow\IReplCommand2.cs" />
+    <Compile Include="ReplWindow\IReplEvaluator.cs" />
+    <Compile Include="ReplWindow\IReplEvaluatorProvider.cs" />
+    <Compile Include="ReplWindow\IReplWindow.cs" />
+    <Compile Include="ReplWindow\IReplWindowCreationListener.cs" />
+    <Compile Include="ReplWindow\IReplWindowProvider.cs" />
+    <Compile Include="ReplWindow\Margin\GlyphPrompts.cs" />
+    <Compile Include="ReplWindow\Margin\PromptMargin.cs" />
+    <Compile Include="ReplWindow\Margin\PromptMarginVisualManager.cs" />
+    <Compile Include="ReplWindow\OutputBuffer.cs" />
+    <Compile Include="ReplWindow\OutputColors.cs" />
+    <Compile Include="ReplWindow\ReplAggregateClassifier.cs" />
+    <Compile Include="ReplWindow\ReplAggregateClassifierProvider.cs" />
+    <Compile Include="ReplWindow\ReplConstants.cs" />
+    <Compile Include="ReplWindow\ReplContentType.cs" />
+    <Compile Include="ReplWindow\ReplInput.cs" />
+    <Compile Include="ReplWindow\ReplOptions.cs" />
+    <Compile Include="ReplWindow\ReplOutputClassificationFormatDefinitions.cs" />
+    <Compile Include="ReplWindow\ReplOutputClassifier.cs" />
+    <Compile Include="ReplWindow\ReplOutputClassifierProvider.cs" />
+    <Compile Include="ReplWindow\ReplOutputContentType.cs" />
+    <Compile Include="ReplWindow\ReplRoleAttribute.cs" />
+    <Compile Include="ReplWindow\ReplWindow.cs" />
+    <Compile Include="ReplWindow\ReplWindowExtensions.cs" />
+    <Compile Include="ReplWindow\ReplWindowProvider.cs" />
+    <Compile Include="ReplWindow\ResizingAdorner.cs" />
+    <Compile Include="ReplWindow\ZoomableInlineAdornment.cs" />
+    <Compile Include="ScalaRepl\IScalaReplSite.cs" />
+    <Compile Include="ScalaRepl\ScalaReplEvaluator.cs" />
+    <Compile Include="ScalaRepl\ScalaReplEvaluatorProvider.cs" />
+    <Compile Include="ScalaRepl\VsScalaReplSite.cs" />
+    <Compile Include="ScalaConstants.cs" />
+    <Compile Include="ScalaLanguageInfo.cs" />
     <Compile Include="SharedProject\AllFilesProjectElement.cs" />
     <Compile Include="SharedProject\AssemblyReferenceNode.cs" />
     <Compile Include="SharedProject\Attributes.cs" />
@@ -541,11 +612,10 @@
     <Analyzer Include="..\..\packages\Microsoft.VisualStudio.Threading.Analyzers.14.0.50702-pre\tools\Microsoft.VisualStudio.Threading.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <VSCTCompile Include="VsPackage.vsct">
+    <VSCTCompile Include="Commands\ScalaPackage.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
     </VSCTCompile>
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="Commands\Resources\OpenReplWindowCommand.png" />
     <Content Include="Resources\Command.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

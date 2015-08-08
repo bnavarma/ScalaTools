@@ -20,6 +20,7 @@ namespace Microsoft.ScalaTools.Repl
             {
                 return new ScalaReplEvaluator();
             }
+            return null;
         }
 
         #endregion

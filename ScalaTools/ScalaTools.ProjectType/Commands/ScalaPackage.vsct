@@ -52,11 +52,11 @@
               <CommandFlag>DefaultInvisible</CommandFlag>
               <CommandFlag>DynamicVisibility</CommandFlag>
           If you do not want an image next to your command, remove the Icon node /> -->
-      <Button guid="guidScalaPackageCmdSet" id="cmdidReplWindow" priority="0x7ff0" type="Button">
-        <Parent guid="guidSHLMainMenu" id="IDG_VS_WNDO_OTRWNDWS1" />
+      <Button guid="guidScalaPackageCmdSet" id="OpenReplWindowCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidScalaPackageCmdSet" id="MyMenuGroup" />
         <Icon guid="guidImages" id="bmpPic1" />
         <Strings>
-          <ButtonText>Scala Interactive Window</ButtonText>
+          <ButtonText>Invoke OpenReplWindowCommand</ButtonText>
         </Strings>
       </Button>
     </Buttons>
@@ -68,7 +68,7 @@
             bitmap strip containing the bitmaps and then there are the numeric ids of the elements used
             inside a button definition. An important aspect of this declaration is that the element id
             must be the actual index (1-based) of the bitmap inside the bitmap strip. -->
-      <Bitmap guid="guidImages" href="Resources\Command.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough"/>
+      <Bitmap guid="guidImages" href="Resources\OpenReplWindowCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough"/>
     </Bitmaps>
   </Commands>
 
@@ -77,12 +77,12 @@
     <GuidSymbol name="guidScalaPackage" value="{6de842fa-c9e0-4a6a-b7df-f077ca3357fd}" />
 
     <!-- This is the guid used to group the menu commands together -->
-    <GuidSymbol name="guidScalaPackageCmdSet" value="{af26140f-c865-4e3a-883b-963382dd0d0a}">
+    <GuidSymbol name="guidScalaPackageCmdSet" value="{d2ab4411-61d9-4ddb-9fc9-29c70325080c}">
       <IDSymbol name="MyMenuGroup" value="0x1020" />
-      <IDSymbol name="cmdidReplWindow" value="0x200" />
+      <IDSymbol name="OpenReplWindowCommandId" value="0x0100" />
     </GuidSymbol>
 
-    <GuidSymbol name="guidImages" value="{d238a980-5f2c-42a3-9d82-afd27a0c609b}" >
+    <GuidSymbol name="guidImages" value="{a64bbf54-5043-423b-bf33-f9e9904c5f0e}" >
       <IDSymbol name="bmpPic1" value="1" />
       <IDSymbol name="bmpPic2" value="2" />
       <IDSymbol name="bmpPicSearch" value="3" />
