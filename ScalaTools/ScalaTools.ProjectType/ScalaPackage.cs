@@ -40,7 +40,11 @@ namespace Microsoft.ScalaTools
     [Description("A custom project type based on CPS")]
     [Guid(ScalaPackage.PackageGuid)]
     [ProvideMenuResource("Menus.ctmenu", 1)]
-    public sealed class ScalaPackage : Package
+    //[ProvideKeyBindingTable(ReplWindow.TypeGuid, 200)]        // Resource ID: "Interactive Console"
+    //[ProvideToolWindow(typeof(ReplWindow), Style = VsDockStyle.Linked, Orientation = ToolWindowOrientation.none, Window = ToolWindowGuids80.Outputwindow, MultiInstances = true)]
+    [ProvideAutoLoad(Microsoft.VisualStudio.Shell.Interop.UIContextGuids.NoSolution)]
+    [ProvideAutoLoad(Microsoft.VisualStudio.Shell.Interop.UIContextGuids.SolutionExists)]
+    public sealed class ScalaPackage : Package, IVsToolWindowFactory
     {
         /// <summary>
         /// The GUID for this package.
@@ -87,7 +91,7 @@ namespace Microsoft.ScalaTools
             Debug.WriteLine(string.Format(CultureInfo.CurrentCulture, "Entering Initialize() of: {0}", this.ToString()));
             base.Initialize();
             Microsoft.ScalaTools.Commands.OpenReplWindowCommand.Initialize(this);
-
+			 
             //var commands = new List<Command> { new OpenReplWindowCommand() };
 
             //RegisterCommands(commands, Guids.ScalaCmdSet);
@@ -109,7 +113,7 @@ namespace Microsoft.ScalaTools
                 window = (IReplWindow2)provider.CreateReplWindow(
                     ReplContentType,
                     "Scala Interactive Window",
-                    typeof(ScalaLanguageInfo).GUID,
+                    /*typeof(ScalaLanguageInfo).GUID*/Guid.Empty,
                     ScalaReplEvaluatorProvider.ScalaReplId
                     );
             }
@@ -155,13 +159,26 @@ namespace Microsoft.ScalaTools
             {
                 if (_contentType == null)
                 {
-                    _contentType = ComponentModel.GetService<IContentTypeRegistryService>().GetContentType(ScalaConstants.Scala);
+                    _contentType = ComponentModel.GetService<IContentTypeRegistryService>().GetContentType(ReplConstants.ReplContentTypeName);
                 }
                 return _contentType;
             }
         }
 
         #endregion
+
+        int IVsToolWindowFactory.CreateToolWindow(ref Guid toolWindowType, uint id)
+        {
+            if (toolWindowType == typeof(ReplWindow).GUID)
+            {
+                var model = (IComponentModel)GetService(typeof(SComponentModel));
+                var replProvider = (ReplWindowProvider)model.GetService<IReplWindowProvider>();
+
+                return replProvider.CreateFromRegistry(model, (int)id) ? VSConstants.S_OK : VSConstants.E_FAIL;
+            }
+
+            return VSConstants.E_FAIL;
+        }
 
         //internal override LibraryManager CreateLibraryManager(CommonPackage package)
         //{

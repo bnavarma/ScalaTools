@@ -16,6 +16,5 @@
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="ScalaTools.ProjectType" Path="|ScalaTools.ProjectType|"/>
     <Asset Type="Microsoft.VisualStudio.ProjectTemplate" d:Source="Project" d:ProjectName="ScalaTools.ProjectTemplate" d:TargetPath="|ScalaTools.ProjectTemplate;TemplateProjectOutputGroup|" Path="ProjectTemplates" d:VsixSubPath="ProjectTemplates" />
     <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
-    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="InteractiveWindow" Path="|InteractiveWindow;PkgdefProjectOutputGroup|" />
   </Assets>
 </PackageManifest>
